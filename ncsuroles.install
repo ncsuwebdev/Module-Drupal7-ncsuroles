@@ -1,0 +1,65 @@
+<?php
+//$Id$
+/* vim: set filetype=php tabstop=2 shiftwidth=2 : */
+
+/**
+ * ncsuroles.install
+ * Installs the ncsuroles module, including its database tables.
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+function ncsuroles_install() {
+  drupal_install_schema('ncsuroles');
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function ncsuroles_uninstall() {
+  drupal_uninstall_schema('ncsuroles');
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function ncsuroles_schema() {
+
+  $schema['ncsuroles'] = array(
+    'description' => t('Stores NCSU-sourced roles.'),
+    'fields' => array(
+      'rid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default'  => 0,
+        'description' => t('The {role}.rid that will be populated by this group.'),
+      ),
+      'name' => array(
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => t('NCSU role name.'),
+      ),
+      'grouptype' => array(
+        'type' => 'varchar',
+        'length' => 12,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => t('The type of source.'),
+      ),
+      'groupkey' => array(
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => t('The group id or key string that defines a group of the selected type.'),
+      ),
+    ),
+    'primary key' => array('rid'),
+  );
+
+  return $schema;
+}

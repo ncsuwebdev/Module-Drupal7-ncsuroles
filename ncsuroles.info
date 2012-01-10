@@ -1,0 +1,12 @@
+name = "NCSU Roles"
+description = "Automatically imports user roles from various NCSU sources."
+package = "NC State University Custom Modules"
+dependencies[] = wraplogin
+
+version = "7.x-1.2"
+core = 7.x
+project = "ncsuroles"
+php = 5.2
+
+; for updates to the theme, specify features server location
+project status url = http://drupal.ncsu.edu/features/fserver
