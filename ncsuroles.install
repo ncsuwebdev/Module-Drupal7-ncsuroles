@@ -8,20 +8,6 @@
  */
 
 /**
- * Implementation of hook_install().
- */
-function ncsuroles_install() {
-  drupal_install_schema('ncsuroles');
-}
-
-/**
- * Implementation of hook_uninstall().
- */
-function ncsuroles_uninstall() {
-  drupal_uninstall_schema('ncsuroles');
-}
-
-/**
  * Implementation of hook_schema().
  */
 function ncsuroles_schema() {
