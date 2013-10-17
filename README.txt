@@ -1,6 +1,6 @@
 //$Id$
 
-NCSU Roles module v7.x-1.2
+NCSU Roles module v7.x-1.3
 ==========================
 Updated to Drupal 7 by njyoung at ncsu.edu
 Drupal 6 module by brabec at ncsu.edu
